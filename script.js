@@ -5,8 +5,8 @@ const breakTimerDisplay = document.getElementById('break-time');
 const startButton = document.getElementById('start');
 const resetButton = document.getElementById('reset');
 
-let workTime = 25 * 60; // 25 minut w sekundach
-let breakTime = 5 * 60; // 5 minut w sekundach
+let workTime = 0.1 * 60; // 25 minut w sekundach
+let breakTime = 0.1 * 60; // 5 minut w sekundach
 let timeLeft = workTime;
 let isRunning = false;  
 let isBreak = false;   
@@ -14,6 +14,7 @@ let isBreak = false;
 const track = document.querySelector('.track'); 
 const coffe = document.querySelector('.coffe'); 
 const boat = document.querySelector('.boat');
+
 const text1 = document.querySelector('.text1');
 const text2 = document.querySelector('.text2');
 const text3 = document.querySelector('.text3');
