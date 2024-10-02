@@ -14,6 +14,7 @@ let isBreak = false;
 const track = document.querySelector('.track'); 
 const coffe = document.querySelector('.coffe'); 
 const boat = document.querySelector('.boat');
+
 const text1 = document.querySelector('.text1');
 const text2 = document.querySelector('.text2');
 const text3 = document.querySelector('.text3');
@@ -30,14 +31,14 @@ function displayTime(seconds, displayElement) {
 function startTimer() {
     if (isRunning) return; 
     isRunning = true;
-  
-    if (!isBreak) {
-        track.classList.add('animated-drive');
-        text1.classList.add('animated-text');
-    }
+    track.classList.add('animated-drive');
+    // if (!isBreak) {
+    //     track.classList.add('animated-drive');
+    //     text1.classList.add('animated-text');
+    // }
     audio.play();
-  //   track.classList.add('animated-drive');
-  // text1.classList.add('animated-text');
+  
+  text1.classList.add('animated-text');
 
     countdown = setInterval(() => {
         timeLeft--;
@@ -48,6 +49,8 @@ function startTimer() {
                 timeLeft = workTime; 
                 displayTime(timeLeft, workTimerDisplay);
                 isBreak = false;
+                coffe.style.animationPlayState = 'paused';
+                track.style.animationPlayState = 'running';
             } else {
                 timeLeft = breakTime; 
                 displayTime(timeLeft, breakTimerDisplay);
@@ -55,6 +58,7 @@ function startTimer() {
               audio.play();
               coffe.classList.add('animated-drive1');
               text2.classList.add('animated-text2');
+              coffe.style.animationPlayState = 'running';
               track.style.animationPlayState = 'paused';
             }
             startTimer(); // Restartuj timer
@@ -71,16 +75,22 @@ function resetTimer() {
     displayTime(breakTime, breakTimerDisplay);
     isRunning = false;  
     isBreak = false; 
-    track.classList.remove('animated-drive');
+   track.classList.remove('animated-drive');
+   track.offsetHeight; // Wymuszenie reflow, aby zresetować animację
+  
+
    coffe.classList.remove('animated-drive1');
     text1.classList.remove('animated-text');
-  
-    track.offsetHeight; 
+   text2.classList.remove('animated-text2');
+   
     coffe.offsetHeight;
      text1.offsetHeight;
     text2.offsetHeight;
+    location.reload()
   
-
+    // track.classList.remove('animated-drive');
+    // coffe.classList.remove('animated-drive1');
+    //  text1.classList.remove('animated-text');
 
 }
 

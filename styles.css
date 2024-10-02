@@ -73,11 +73,11 @@ body {
   }
   
   .animated-drive {
-    animation: drive 15s linear infinite;
+    animation: drive 20s linear infinite;
   }
   
   .animated-drive1 {
-    animation: drive1 10s linear infinite;
+    animation: drive1 7s linear infinite;
   }
   
   .animated-drive2 {
@@ -275,11 +275,11 @@ body {
   }
   
   .animated-text {
-     animation: colorChange 5s ease-in-out 7500;
+     animation: colorChange 5s ease-in-out 200;
   }
   
   .animated-text2 {
-     animation: colorChange 5s ease-in-out 10;
+     animation: colorChange 5s ease-in-out 55;
   }
   
   @keyframes colorChange {
